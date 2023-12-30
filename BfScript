@@ -1,0 +1,62 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+ 
+local Window = Library.CreateLib("ZeloHub", "DarkTheme")
+ 
+ 
+--Plr tabs (done)
+local PlrTab = Window:NewTab("Players")
+local PlrSection = PlrTab:NewSection("Function")
+ 
+PlrSection:NewButton("Reset ur character", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.Head:Destroy()
+end)
+
+PlrSection:NewButton("NoClip", "ButtonInfo", function()
+    local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+end)
+ 
+-- Others
+local OthersTab = Window:NewTab("Hacks")
+local OthersSection = OthersTab:NewSection("Scripts")
+ 
+OthersSection:NewButton("Ganteng Hub", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://isnahamzahpastebin.tech/v1/gantenghubv1_026"))()
+end)
+
+OthersSection:NewButton("Vector Hub", "ButtonInfo", function()
+    _G.Mode = "English"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tuxoz/VectorHub/main/MBPC"))()
+end)
+
+OthersSection:NewButton("Infinite Yield", "ButtonInfo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+OthersSection:NewButton("Hoho Hub", "ButtonInfo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
+end)
+
+--Zelo Was Here
