@@ -59,4 +59,8 @@ OthersSection:NewButton("Hoho Hub", "ButtonInfo", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
 end)
 
+OthersSection:NewButton("Zekrom Hub", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ahmadsgamer2/Zekrom-Hub-X/main/Zekrom-Hub-X-exe", true))()'))()
+end)
+
 --Zelo Was Here
